@@ -1,6 +1,97 @@
 import Head from 'next/head'
+import { TextInput, ActionIcon, useMantineTheme, Title, Text, Container, Button, Overlay, createStyles } from '@mantine/core';
+import { IconMail, IconArrowLeft } from '@tabler/icons';
+
+const useStyles = createStyles((theme) => ({
+  wrapper: {
+    position: 'relative',
+    paddingTop: 180,
+    paddingBottom: 130,
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+    '@media (max-width: 520px)': {
+      paddingTop: 80,
+      paddingBottom: 50,
+    },
+  },
+
+  inner: {
+    position: 'relative',
+    zIndex: 1,
+  },
+
+  title: {
+    fontWeight: 800,
+    fontSize: 40,
+    letterSpacing: -1,
+    paddingLeft: theme.spacing.md,
+    paddingRight: theme.spacing.md,
+    color: theme.white,
+    marginBottom: theme.spacing.xs,
+    textAlign: 'center',
+    fontFamily: 'Red Hat Display, sans-serif',
+
+    '@media (max-width: 520px)': {
+      fontSize: 28,
+      textAlign: 'left',
+    },
+  },
+
+  highlight: {
+    color: theme.colors[theme.primaryColor][4],
+  },
+
+  description: {
+    color: theme.colors.gray[0],
+    textAlign: 'center',
+
+    '@media (max-width: 520px)': {
+      fontSize: theme.fontSizes.md,
+      textAlign: 'left',
+    },
+  },
+
+  controls: {
+    marginTop: theme.spacing.xl * 1.5,
+    display: 'flex',
+    justifyContent: 'center',
+    paddingLeft: theme.spacing.md,
+    paddingRight: theme.spacing.md,
+
+    '@media (max-width: 520px)': {
+      flexDirection: 'column',
+    },
+  },
+
+  control: {
+    height: 42,
+    fontSize: theme.fontSizes.md,
+
+    '&:not(:first-of-type)': {
+      marginLeft: theme.spacing.md,
+    },
+
+    '@media (max-width: 520px)': {
+      '&:not(:first-of-type)': {
+        marginTop: theme.spacing.md,
+        marginLeft: 0,
+      },
+    },
+  },
+
+  secondaryControl: {
+    color: theme.white,
+    backgroundColor: 'rgba(255, 255, 255, .4)',
+
+    '&:hover': {
+      backgroundColor: 'rgba(255, 255, 255, .45) !important',
+    },
+  },
+}));
 
 export default function Home() {
+  const { classes, cx } = useStyles();
+  const theme = useMantineTheme();
   return (
     <>
       <Head>
@@ -35,22 +126,44 @@ fill="#fff" stroke="none">
                 SaintSpace
             </div>    
         </div>
-        <div className="headline">
-            Church Management Tech Revival
+        <div className={classes.wrapper}>
+      <Overlay color="#121212" opacity={0.65} zIndex={1} />
+
+      <div className={classes.inner}>
+        <Title className={classes.title}>
+          <Text component="span" inherit className={classes.highlight}>
+          Church Management{' '}
+          </Text>
+          Tech Revival
+        </Title>
+
+        <Container size={640}>
+          <Text size="lg" className={classes.description}>
+          Say goodbye to clunky, outdated church management systems and unleash the power of modern technology. We're building the next generation of cloud software to revolutionize the way you run your church.
+          </Text>
+        </Container>
+
+        {/* <div className={classes.controls}>
+          <Button className={classes.control} variant="white" size="lg">
+            Get started
+          </Button>
+          <Button className={cx(classes.control, classes.secondaryControl)} size="lg">
+            Live demo
+          </Button>
         </div>
-        <div className="tagline-container">
-            <div className="tagline">
-                Say goodbye to clunky, outdated church management systems and unleash the power of modern technology. We&apos;re building the next generation of cloud software to revolutionize the way you run your church.
-            </div>
-        </div>
-        {/* <div class="form-container">
-            <div id="subscribe-form">
-                <form action="#">
-                  <input type="email" placeholder="Enter your email address">
-                  <button type="submit">Keep me updated</button>
-                </form>
-              </div>
-        </div>*/}
+        <TextInput
+      radius="xl"
+      size="md"
+      rightSection={
+        <Button size="lg">
+            Live demo
+        </Button>
+      }
+      placeholder="Enter your email address"
+      rightSectionWidth={42}
+    /> */}
+      </div>
+    </div>
     </>
   )
 }
