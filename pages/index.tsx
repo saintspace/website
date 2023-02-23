@@ -139,7 +139,7 @@ fill="#fff" stroke="none">
 
         <Container size={640}>
           <Text size="lg" className={classes.description}>
-          Say goodbye to clunky, outdated church management systems and unleash the power of modern technology. We're building the next generation of cloud software to revolutionize the way you run your church.
+          Say goodbye to clunky, outdated church management systems and unleash the power of modern technology. We&apos;re building the next generation of cloud software to revolutionize the way you run your church.
           </Text>
         </Container>
 
