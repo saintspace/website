@@ -1,5 +1,5 @@
 #!/bin/bash
-
+touch .next/robots.txt
 if [[ $NODE_ENV = "production" ]]
 then
     cat << EOF > .next/robots.txt
