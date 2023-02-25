@@ -12,3 +12,5 @@ User-agent: *
 Disallow: /
 EOF
 fi
+cd .next
+ls
