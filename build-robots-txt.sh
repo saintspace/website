@@ -4,7 +4,7 @@ if [[ $BUILD_ENV = "production" ]]
 then
     cat << EOF > public/robots.txt
 User-agent: *
-Disallow:
+Allow: /
 EOF
 else
     cat << EOF > public/robots.txt
