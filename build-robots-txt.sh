@@ -1,16 +1,17 @@
 #!/bin/bash
-touch .next/robots.txt
-if [[ $NODE_ENV = "production" ]]
+touch public/robots.txt
+if [[ $BUILD_ENV = "production" ]]
 then
-    cat << EOF > .next/robots.txt
+    cat << EOF > public/robots.txt
 User-agent: *
 Disallow:
 EOF
 else
-    cat << EOF > .next/robots.txt
+    cat << EOF > public/robots.txt
 User-agent: *
 Disallow: /
 EOF
 fi
-cd .next
+cd public
 ls
+cd ..
