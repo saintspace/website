@@ -1,6 +1,6 @@
 #!/bin/bash
 
-if [[ $NODE_ENV = "production" ]]
+if [[ $BUILD_ENV = "production" ]]
 then
     cat << EOF > .next/robots.txt
 User-agent: *
