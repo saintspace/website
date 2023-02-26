@@ -2,7 +2,6 @@ import Head from 'next/head'
 import { TextInput, useMantineTheme, Title, Text, Container, Button, Overlay, createStyles } from '@mantine/core';
 import { useForm } from '@mantine/form';
 import React, { useState } from 'react';
-import { IconCheck, IconX } from '@tabler/icons';
 
 const useStyles = createStyles((theme) => ({
   wrapper: {
@@ -113,7 +112,17 @@ export default function Home() {
     setSubmitErrorDisplay('none');
     setSubmitSuccessDisplay('none');
     setSubmitProcessingDisplay('block');
-    fetch('https://dev-api.saintspace.app/')
+    const postData = {
+      email: data.email
+    }
+    const signUpEndpoint = process.env.NEXT_PUBLIC_API_BASE_URL + 'v1/email-subscriptions'
+    fetch(signUpEndpoint, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(postData)
+    })
       .then(response => {
         if (response.ok) {
           console.log('API call successful');
@@ -185,9 +194,9 @@ fill="#fff" stroke="none">
           Say goodbye to clunky, outdated church management systems and unleash the power of modern technology. We&apos;re building the next generation of cloud software to revolutionize the way you run your church.
           </Text>
         </Container>
-        {/* <Container size={640}>
+        <Container size={640}>
           <Text size="lg" className={classes.description}>
-          Sign up to join the movement.
+          Sign up to receive updates and opportunities to get early access.
           </Text>
         </Container>
 
@@ -218,7 +227,7 @@ fill="#fff" stroke="none">
           </Container>
           <Container size={640} display={submitSuccessDisplay}>
             <Text size="lg" className={classes.successMessage}>
-              Thanks! We've signed you up.
+            Thanks! We'll send you an email to confirm your subscription.
             </Text>
           </Container>
           <Container size={640} display={submitErrorDisplay}>
@@ -226,7 +235,7 @@ fill="#fff" stroke="none">
             Something went wrong! Please try again later.
             </Text>
           </Container>
-        </form> */}
+        </form>
       </div>
     </div>
     </>

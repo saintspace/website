@@ -1,6 +1,6 @@
 #!/bin/bash
 touch public/robots.txt
-if [[ $BUILD_ENV = "production" ]]
+if [[ $NODE_ENV = "production" ]]
 then
     cat << EOF > public/robots.txt
 User-agent: *
