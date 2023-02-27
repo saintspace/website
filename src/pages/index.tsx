@@ -227,7 +227,7 @@ fill="#fff" stroke="none">
           </Container>
           <Container size={640} display={submitSuccessDisplay}>
             <Text size="lg" className={classes.successMessage}>
-            Thanks! We'll send you an email to confirm your subscription.
+            Thanks! We&apos;ll send you an email to confirm your subscription.
             </Text>
           </Container>
           <Container size={640} display={submitErrorDisplay}>
