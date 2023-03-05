@@ -69,7 +69,7 @@ const useStyles = createStyles((theme) => ({
     marginBottom: '10px',
   },
   successMessage: {
-    color: '#6ae66a',
+    color: 'white',
     textAlign: 'center',
     marginBottom: '10px',
   },
@@ -79,7 +79,7 @@ const useStyles = createStyles((theme) => ({
     marginBottom: '10px',
   },
   errorMessage: {
-    color: '#ff8656',
+    color: 'white',
     textAlign: 'center',
     marginBottom: '10px',
   }
@@ -201,7 +201,7 @@ fill="#fff" stroke="none">
         </Container>
 
         <form onSubmit={form.onSubmit(submitHandler)}>
-          <Container size={320} className={classes.emailInputContainer}>
+          <Container size={450} className={classes.emailInputContainer}>
             <TextInput
               className={classes.emailInput}
               radius="sm"
@@ -222,17 +222,17 @@ fill="#fff" stroke="none">
           </Container>
           <Container size={640} display={submitProcessingDisplay}>
             <Text size="lg" className={classes.processingMessage}>
-              Processing your submission...
+            🚀 Processing your submission...
             </Text>
           </Container>
           <Container size={640} display={submitSuccessDisplay}>
             <Text size="lg" className={classes.successMessage}>
-            Thanks! We&apos;ll send you an email to confirm your subscription.
+            ✔️ Thanks! We&apos;ll send you an email to confirm your subscription.
             </Text>
           </Container>
           <Container size={640} display={submitErrorDisplay}>
             <Text size="lg" className={classes.errorMessage}>
-            Something went wrong! Please try again later.
+            ❌ Something went wrong! Please try again later.
             </Text>
           </Container>
         </form>
