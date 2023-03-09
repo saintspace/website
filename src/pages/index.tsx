@@ -7,12 +7,10 @@ const useStyles = createStyles((theme) => ({
   wrapper: {
     position: 'relative',
     paddingTop: 50,
-    paddingBottom: 130,
     backgroundSize: 'cover',
     backgroundPosition: 'center',
     '@media (max-width: 520px)': {
       paddingTop: 40,
-      paddingBottom: 50,
     },
   },
 
@@ -82,6 +80,18 @@ const useStyles = createStyles((theme) => ({
     color: 'white',
     textAlign: 'center',
     marginBottom: '10px',
+  },
+  contact: {
+    color: 'white',
+    textAlign: 'center',
+    marginTop: '20px',
+    fontSize: '14px'
+  },
+  copyright: {
+    color: 'white',
+    textAlign: 'center',
+    marginTop: '5px',
+    fontSize: '12px'
   }
 }));
 
@@ -179,7 +189,6 @@ fill="#fff" stroke="none">
             </div>    
         </div>
         <div className={classes.wrapper}>
-      <Overlay color="#121212" opacity={0.65} zIndex={1} />
 
       <div className={classes.inner}>
         <Title className={classes.title}>
@@ -237,6 +246,15 @@ fill="#fff" stroke="none">
           </Container>
         </form>
       </div>
+      <Container size={640}>
+        <Text size="lg" className={classes.contact}>
+          You can reach us at contact@saintspace.church
+        </Text> 
+        <Text size="lg" className={classes.copyright}>
+          © 2023 SaintSpace LLC
+        </Text>
+      </Container>
+      
     </div>
     </>
   )
